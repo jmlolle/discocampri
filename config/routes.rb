@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'visitors#index'
+  get "/student", to: "visitors#student", as: "student"
+  get "/marseille", to: "visitors#marseille", as: "marseille"
 end

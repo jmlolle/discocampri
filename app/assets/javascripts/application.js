@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that'll be compiled into application, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
+//= require jquery.min
+//= require swiper.min
 //= require_tree .
+
+if ( navigator.platform.indexOf('Win') != -1 ) {
+  window.document.getElementById("wrapper").setAttribute("class", "windows");
+} else if ( navigator.platform.indexOf('Mac') != -1 ) {
+  window.document.getElementById("wrapper").setAttribute("class", "mac");
+}
+
+$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+});
